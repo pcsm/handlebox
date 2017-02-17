@@ -27,10 +27,10 @@ impl<V> HandleBox<V> {
         h
     }
 
-    pub fn remove(&mut self, handle: Handle) {
-        let result = self.hash_map.remove(&handle);
+    pub fn remove(&mut self, handle: &Handle) {
+        let result = self.hash_map.remove(handle);
         if result.is_some() {
-            self.discarded_handles.push(handle)
+            self.discarded_handles.push(*handle)
         }
     }
 
@@ -64,11 +64,11 @@ mod tests {
         assert_eq!(c.hash_map().values().len(), 2);
         assert_eq!(c.get(&h2).unwrap(), &999);
 
-        c.remove(h2);
+        c.remove(&h2);
         assert_eq!(c.hash_map().values().len(), 1);
         assert!(c.get(&h2).is_none());
 
-        c.remove(h1);
+        c.remove(&h1);
         assert!(c.hash_map().is_empty());
         assert!(c.get(&h1).is_none());
     }
