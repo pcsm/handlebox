@@ -38,6 +38,10 @@ impl<V> HandleBox<V> {
         self.hash_map.get(handle)
     }
 
+    pub fn get_mut(&mut self, handle: &Handle) -> Option<&mut V> {
+        self.hash_map.get_mut(handle)
+    }
+
     pub fn hash_map(&self) -> &HashMap<Handle, V> {
         &self.hash_map
     }
