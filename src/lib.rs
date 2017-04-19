@@ -27,11 +27,12 @@ impl<V> HandleBox<V> {
         h
     }
 
-    pub fn remove(&mut self, handle: &Handle) {
+    pub fn remove(&mut self, handle: &Handle) -> Option<V> {
         let result = self.hash_map.remove(handle);
         if result.is_some() {
             self.discarded_handles.push(*handle)
         }
+        result
     }
 
     pub fn get(&self, handle: &Handle) -> Option<&V> {
