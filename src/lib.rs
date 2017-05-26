@@ -1,6 +1,6 @@
 use std::collections::BTreeMap;
 
-pub type Handle = usize;
+pub type Handle = u32;
 
 /// A map-like collection that keeps track of unused keys
 #[derive(Default)]
@@ -18,7 +18,7 @@ impl<V> HandleBox<V> {
     }
 
     fn new_handle(&mut self) -> Handle {
-        self.discarded_handles.pop().unwrap_or(self.map.values().len())
+        self.discarded_handles.pop().unwrap_or(self.map.values().len() as Handle)
     }
 
     pub fn add(&mut self, value: V) -> Handle {
