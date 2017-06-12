@@ -77,4 +77,16 @@ mod tests {
         assert!(c.internal_map().is_empty());
         assert!(c.get(&h1).is_none());
     }
+
+    #[test]
+    fn test_add_remove_add() {
+        let mut c = HandleBox::new();
+        let h1 = c.add(888);
+
+        let h2 = c.add(999);
+        c.remove(&h2);
+        
+        let h3 = c.add(555);
+        assert_eq!(h2, h3); // Because the handle gets re-used
+    }
 }
