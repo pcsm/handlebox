@@ -29,6 +29,6 @@ assert_eq!(c.get(&h1).unwrap(), &888);
 // Removing values
 c.remove(&h1);
 
-// You can access the internal `BTreeMap<u32, V>` with the `.internal_map()` method
+// You can access the internal BTreeMap<u32, V> with the internal_map() method
 assert_eq!(c.internal_map().values().len(), 0);
 ```
