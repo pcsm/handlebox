@@ -1,13 +1,13 @@
 [package]
 name = "handlebox"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Jason Grlicky <jason@paracosm.us>"]
 description = "A map-like collection that reuses unused keys"
 keywords = ["container", "map", "data-structure"]
 categories = ["data-structures"]
 license = "MIT"
 readme = "README.md"
-documentation = "https://docs.rs/handlebox/0.2.0/handlebox/"
+documentation = "https://docs.rs/handlebox/"
 repository = "https://github.com/pcsm/handlebox"
 
 [badges]

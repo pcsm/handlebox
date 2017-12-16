@@ -44,10 +44,6 @@ impl<V> HandleBox<V> {
     pub fn get_mut(&mut self, handle: &Handle) -> Option<&mut V> {
         self.map.get_mut(handle)
     }
-
-    pub fn internal_map(&self) -> &BTreeMap<Handle, V> {
-        &self.map
-    }
 }
 
 #[cfg(test)]
@@ -57,33 +53,33 @@ mod tests {
     #[test]
     fn test_new() {
         let c = HandleBox::<i32>::new();
-        assert!(c.internal_map().is_empty());
+        assert!(c.map.is_empty());
     }
 
     #[test]
     fn test_add_remove() {
         let mut c = HandleBox::new();
         let h1 = c.add(888);
-        assert!(!c.internal_map().is_empty());
+        assert!(!c.map.is_empty());
         assert_eq!(c.get(&h1).unwrap(), &888);
 
         let h2 = c.add(999);
-        assert_eq!(c.internal_map().values().len(), 2);
+        assert_eq!(c.map.values().len(), 2);
         assert_eq!(c.get(&h2).unwrap(), &999);
 
         c.remove(&h2);
-        assert_eq!(c.internal_map().values().len(), 1);
+        assert_eq!(c.map.values().len(), 1);
         assert!(c.get(&h2).is_none());
 
         c.remove(&h1);
-        assert!(c.internal_map().is_empty());
+        assert!(c.map.is_empty());
         assert!(c.get(&h1).is_none());
     }
 
     #[test]
     fn test_add_remove_add() {
         let mut c = HandleBox::new();
-        let h1 = c.add(888);
+        c.add(888);
 
         let h2 = c.add(999);
         c.remove(&h2);
