@@ -14,7 +14,7 @@ Note that Handlebox has not yet reached version 1.0, so the API may change drast
 
 ## Example
 
-```rs
+```rust
 use handlebox::*;
 
 // Creating
