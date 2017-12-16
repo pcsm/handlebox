@@ -2,7 +2,7 @@ use std::collections::BTreeMap;
 
 pub type Handle = u32;
 
-/// A map-like collection that keeps track of unused keys
+/// A map-like collection that reuses unused keys. Hard-coded to use `u32` keys right now.
 #[derive(Default)]
 pub struct HandleBox<V> {
     pub map: BTreeMap<Handle, V>,
