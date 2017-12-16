@@ -2,7 +2,7 @@
 name = "handlebox"
 version = "0.2.0"
 authors = ["Jason Grlicky <jason@paracosm.us>"]
-description = "A map-like collection that reuses unused keys. Hard-coded to use u32 keys right now."
+description = "A map-like collection that reuses unused keys"
 keywords = ["container", "map", "data-structure"]
 categories = ["data-structures"]
 license = "MIT"
