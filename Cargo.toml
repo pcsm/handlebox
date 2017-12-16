@@ -7,6 +7,7 @@ keywords = ["container", "map", "data-structure"]
 categories = ["data-structures"]
 license = "MIT"
 readme = "README.md"
+documentation = "https://docs.rs/handlebox/0.2.0/handlebox/"
 repository = "https://github.com/pcsm/handlebox"
 
 [badges]

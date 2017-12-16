@@ -1,5 +1,6 @@
 use std::collections::BTreeMap;
 
+/// The keys used in a `HandleBox`. A typedef for `u32`.
 pub type Handle = u32;
 
 /// A map-like collection that reuses unused keys. Hard-coded to use `u32` keys right now.
