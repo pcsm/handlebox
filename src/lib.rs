@@ -15,7 +15,7 @@ pub struct HandleBox<V> {
 }
 
 impl<V> HandleBox<V> {
-    /// Create an empty `HandleBox`
+    /// Create an empty `HandleBox`.
     pub fn new() -> HandleBox<V> {
         HandleBox {
             map: BTreeMap::new(),
