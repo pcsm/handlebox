@@ -1,4 +1,4 @@
-Handlebox
+Handlebox [![Docs](https://docs.rs/handlebox/badge.svg)](https://docs.rs/handlebox/) [![Crates.io](https://img.shields.io/crates/v/handlebox.svg)](https://crates.io/crates/handlebox)
 ==================================================================
 
 Handlebox is a simple map-like collection that reuses unused keys. Right now it's hard-coded to use `u32` keys.
